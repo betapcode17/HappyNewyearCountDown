@@ -1,3 +1,10 @@
+(function ($) {
+  // Fireworks function
+  window.startFireworks = function () {
+    $("#fireworks-container").fireworks();
+  };
+})(jQuery);
+
 // Set the countdown date
 var countDownDate = new Date("January 1, 2025 00:00:00").getTime();
 
@@ -15,18 +22,32 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in HTML elements with the corresponding IDs
+  // Update HTML content
   document.getElementById("days").innerHTML = days;
   document.getElementById("hours").innerHTML = hours;
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
 
-  // Stop the countdown when it reaches zero
-  if (distance < 0) {
+  // If countdown is finished
+  if (distance <= 0) {
     clearInterval(x);
+
+    // Set all to "0"
     document.getElementById("days").innerHTML = "0";
     document.getElementById("hours").innerHTML = "0";
     document.getElementById("minutes").innerHTML = "0";
     document.getElementById("seconds").innerHTML = "0";
+    console.log("Countdown finished. Starting fireworks!");
+    // Trigger fireworks
+    startFireworks();
+    showPopup();
   }
 }, 1000);
+function showPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+// Đóng popup
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}

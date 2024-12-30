@@ -10,6 +10,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.fireworks.js"></script>
+    <script src="main.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -42,6 +46,18 @@
       </div>
       <img src="images/rocket.png" alt="fireworks" class="rocket" />
     </div>
-    <script src="main.js"></script>
+    <div id="fireworks-container" style="width: 100%; height: 100vh"></div>
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <h1>🎉 Chúc mừng năm mới! 🎉</h1>
+        <p>
+          Chúc mừng năm mới! Mong rằng năm nay sẽ mang đến cho bạn thật nhiều
+          niềm vui, sức khỏe dồi dào, thành công bền vững và những khoảnh khắc ý
+          nghĩa bên gia đình, bạn bè. Hãy cùng chào đón một năm mới tràn đầy hy
+          vọng và cơ hội để tỏa sáng! 🎉🍀
+        </p>
+        <button class="close-btn" onclick="closePopup()">Đóng</button>
+      </div>
+    </div>
   </body>
 </html>
